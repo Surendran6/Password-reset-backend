@@ -3,15 +3,15 @@ const nodemailer = require('nodemailer');
 
 const sendEmail = (options) => {
 
-    const transporter = nodemailer.createTransport({
-        service : process.env.EMAIL_SERVICE,
+    const transporter = nodemailer.createTransport({     
+        service:"hotmail",
         auth : {
-            user : process.env.EMAIL_USERNAME,
-            pass : process.env.EMAIL_PASSWORD
+            user : "resetpasswordnow123@hotmail.com",
+            pass :process.env.EMAIL_PASSWORD
         }
     })
     const mailDetails = {
-        from : process.env.EMAIL_FROM,
+        from : "resetpasswordnow123@hotmail.com",
         to : options.to,
         subject : options.subject,
         html : options.text
