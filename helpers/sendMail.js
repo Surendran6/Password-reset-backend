@@ -6,12 +6,12 @@ const sendEmail = (options) => {
     const transporter = nodemailer.createTransport({     
         service:"hotmail",
         auth : {
-            user : "resetpasswordnow123@hotmail.com",
+            user : "dran.customer96@hotmail.com",
             pass :process.env.EMAIL_PASSWORD
         }
     })
     const mailDetails = {
-        from : "resetpasswordnow123@hotmail.com",
+        from : "dran.customer96@hotmail.com",
         to : options.to,
         subject : options.subject,
         html : options.text
