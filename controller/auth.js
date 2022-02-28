@@ -10,7 +10,8 @@ const User = require('../models/User')
 */
 
 exports.register = async (req,res,next) => {
-    const {username,email,password} = req.body;
+    const { username, email, password, profilePhoto} = req.body;
+    console.log(username);
     try{
         /* 
             Before saving the user in the database 
@@ -19,7 +20,8 @@ exports.register = async (req,res,next) => {
         const user = await User.create({
             username,
             email,
-            password
+            password,
+            profilePhoto
         })
         return res.status(200).json({
             success : true,
@@ -67,7 +69,8 @@ exports.login = async (req,res,next) => {
         const token = user.getToken()
         return res.status(200).json({
             success : true,
-            token
+            token,
+            user
         })
     }catch(error){
         res.status(500).send(error)

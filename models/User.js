@@ -4,9 +4,9 @@ const jwt = require('jsonwebtoken');
 const crypto = require("crypto");
 
 const userSchema = new mongoose.Schema({
-    username : {
-        type : String,
-        required : [true,"Please provide UserName"]
+    username: {
+        type: String,
+        required: [true,"Please provide UserName"]
     },
     email : {
         type : String,
@@ -23,7 +23,8 @@ const userSchema = new mongoose.Schema({
         minlength : 6
     },
     resetPasswordToken : String,
-    resetPasswordExpire : Date
+    resetPasswordExpire : Date,
+    profilePhoto: String,
 });
 
 userSchema.pre('save', async function(next){
